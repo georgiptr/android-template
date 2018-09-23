@@ -1,9 +1,10 @@
 package ggeorgip.androidtemplate.di
 
-import android.content.Context
 import dagger.Component
 import dagger.android.AndroidInjectionModule
-import ggeorgip.androidtemplate.activities.MainActivity
+import dagger.android.AndroidInjector
+import ggeorgip.androidtemplate.MainApplication
+import ggeorgip.androidtemplate.di.modules.ActivityModule
 import ggeorgip.androidtemplate.di.modules.AppModule
 import ggeorgip.androidtemplate.di.modules.RepositoryModule
 import ggeorgip.androidtemplate.di.modules.ViewModelModule
@@ -16,10 +17,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [
     AppModule::class,
-    ViewModelModule::class,
     AndroidInjectionModule::class,
+    ActivityModule::class,
+    ViewModelModule::class,
     RepositoryModule::class])
-interface AppComponent {
-    fun context(): Context
-    fun inject(clazz: MainActivity)
-}
+interface AppComponent: AndroidInjector<MainApplication> {}

@@ -1,20 +1,23 @@
 package ggeorgip.androidtemplate
 
+import android.app.Activity
 import android.app.Application
-import ggeorgip.androidtemplate.di.AppComponent
-import ggeorgip.androidtemplate.di.modules.AppModule
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasActivityInjector
+import ggeorgip.androidtemplate.di.DaggerAppComponent
+import javax.inject.Inject
 
-class MainApplication: Application() {
-
-    companion object {
-        lateinit var appComponent: AppComponent
-    }
+class MainApplication: Application(), HasActivityInjector {
+    @Inject
+    lateinit var dispatchingActivityInjector: DispatchingAndroidInjector<Activity>
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.builder()
-            .appModule(AppModule(this, this))
-            .build()
+        DaggerAppComponent.create().inject(this)
     }
 
+    override fun activityInjector(): AndroidInjector<Activity> {
+        return dispatchingActivityInjector;
+    }
 }

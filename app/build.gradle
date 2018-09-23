@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt' // Replace annotationProcessor with kapt -> handles both Java/Kotlin
 
 android {
     compileSdkVersion 28
