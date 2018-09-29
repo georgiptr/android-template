@@ -3,10 +3,11 @@ Template with configured useful libraries and patterns for starting a new Androi
 
  * SDK 28, minimum SDK 21
  * Java 8 support
- * Kotlin support 1.2.70
+ * Kotlin support 1.2.71
  * Android Architecture Components 1.1.1
  * Android Support Library 28.0.0
- * Dagger 2.17
+ * AndroidX
+ * Dagger 2.16
  * Reactive
    * RxJava 2.2.2
    * RxAndroid 2.1.0
@@ -18,7 +19,7 @@ Template with configured useful libraries and patterns for starting a new Androi
    * Google Services Plugin (used by Crashlytics/Firebase Analytics), must be uncommented
    * Empty app/google-service.json, must be populated to use Crashlytics/Firebase Analytics
    * Logger class using internally Firebase Analytics/Crashlytics 
- * Gradle 4.4
+ * Gradle 4.10
    * org.gradle.jvmargs=-Xmx2048m
    * android.useAndroidX=true
    * android.enableJetifier=true
