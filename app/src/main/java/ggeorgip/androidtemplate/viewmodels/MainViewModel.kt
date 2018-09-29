@@ -1,7 +1,7 @@
 package ggeorgip.androidtemplate.viewmodels
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
+import androidx.lifecycle.AndroidViewModel
 import ggeorgip.androidtemplate.repositories.IMainRepository
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
